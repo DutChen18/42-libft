@@ -10,7 +10,7 @@ struct s_list
 	t_list	*next;
 };
 
-/* character functions */
+/* characters */
 int		ft_isalpha(int ch);
 int		ft_isdigit(int ch);
 int		ft_isalnum(int ch);
@@ -19,7 +19,7 @@ int		ft_isprint(int ch);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
 
-/* string functions */
+/* strings */
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -29,7 +29,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t len);
 char	*ft_strnstr(const char *str1, const char *str2, size_t len);
 int		ft_atoi(const char *str);
 
-/* memory functions */
+/* memory */
 void	*ft_memset(void *ptr, int ch, size_t size);
 void	*ft_memcpy(void *dst, const void *src, size_t size);
 void	*ft_memmove(void *dst, const void *src, size_t size);
@@ -37,10 +37,11 @@ void	*ft_memchr(const void *ptr, int ch, size_t size);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
 void	ft_bzero(void *ptr, size_t size);
 
-/* malloc functions */
+/* malloc */
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *str);
 
+/* strings 2 */
 char	*ft_substr(const char *str, unsigned int idx, size_t len);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strtrim(const char *str1, const char *str2);
@@ -48,11 +49,14 @@ char	**ft_split(const char *str, char ch);
 char	*ft_itoa(int num);
 char	*ft_strmapi(const char *str, char (*func)(unsigned int, char));
 void	ft_striteri(char *str, void (*func)(unsigned int, char*));
+
+/* io */
 void	ft_putchar_fd(char ch, int fd);
 void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int num, int fd);
 
+/* lists */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

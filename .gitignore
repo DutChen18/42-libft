@@ -1,3 +1,5 @@
 /libftTester
+/libft-unit-test
+/libft-war-machine
 *.o
 *.a

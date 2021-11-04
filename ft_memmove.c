@@ -5,22 +5,15 @@ void
 {
 	size_t	i;
 
-	i = 0;
 	if (src < dst)
 	{
-		while (i < size)
-		{
-			size -= 1;
-			((unsigned char *) dst)[size] = ((unsigned char *) src)[size];
-		}
+		return (ft_memcpy(dst, src, size));
 	}
-	else
+	i = 0;
+	while (i < size)
 	{
-		while (i < size)
-		{
-			((unsigned char *) dst)[i] = ((unsigned char *) src)[i];
-			i += 1;
-		}
+		((unsigned char *) dst)[i] = ((unsigned char *) src)[i];
+		i += 1;
 	}
 	return (dst);
 }
