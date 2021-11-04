@@ -68,4 +68,4 @@ test: libftTester
 	(cd libftTester; make a)
 
 %.o: %.c
-	cc -c -Wall -Wextra -Werror -o $@ $^
+	cc -c -Wall -Wextra -Werror -ansi -pedantic -o $@ $^
