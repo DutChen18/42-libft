@@ -8,7 +8,7 @@ char
 		if (*str == (char) ch)
 			return ((char *) str);
 		if (!*str)
-			return (0);
+			return (NULL);
 		str += 1;
 	}
 }

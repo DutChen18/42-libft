@@ -9,7 +9,8 @@ char
 
 	len = ft_strlen(str);
 	res = malloc(len + 1);
-	if (res)
-		ft_memcpy(res, str, len + 1);
+	if (res == NULL)
+		return (NULL);
+	ft_memcpy(res, str, len + 1);
 	return (res);
 }

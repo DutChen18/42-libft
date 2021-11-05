@@ -5,10 +5,8 @@ void
 {
 	size_t	i;
 
-	if (src < dst)
-	{
+	if (src <= dst)
 		return (ft_memcpy(dst, src, size));
-	}
 	i = 0;
 	while (i < size)
 	{

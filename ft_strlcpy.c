@@ -7,9 +7,7 @@ size_t
 
 	len = ft_strlen(src);
 	if (len + 1 < size)
-	{
 		ft_memcpy(dst, src, len + 1);
-	}
 	else if (size > 0)
 	{
 		ft_memcpy(dst, src, size - 1);

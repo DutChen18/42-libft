@@ -12,5 +12,5 @@ void
 			return ((unsigned char *) ptr + i);
 		i += 1;
 	}
-	return (0);
+	return (NULL);
 }

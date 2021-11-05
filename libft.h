@@ -2,6 +2,10 @@
 # define LIBFT_H
 # include <stddef.h>
 
+# ifndef FT_SAFE
+#  define FT_SAFE	0
+# endif
+
 typedef struct s_list	t_list;
 
 struct s_list

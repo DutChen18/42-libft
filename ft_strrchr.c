@@ -5,7 +5,7 @@ char
 {
 	char	*res;
 
-	res = 0;
+	res = NULL;
 	while (1)
 	{
 		if (*str == (char) ch)

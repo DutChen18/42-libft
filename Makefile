@@ -43,6 +43,8 @@ SOURCES_BONUS=\
 	ft_lstmap_bonus.c \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c
+HEADERS=\
+	libft.h
 OBJECTS=$(SOURCES:.c=.o)
 OBJECTS_BONUS=$(SOURCES_BONUS:.c=.o)
 NAME=libft.a
@@ -61,13 +63,7 @@ re: clean all
 all: $(NAME)
 
 norm:
-	norminette $(SOURCES) $(SOURCES_BONUS)
-
-libftTester:
-	git clone https://github.com/Tripouille/libftTester.git
-
-test: libftTester
-	(cd libftTester; make a)
+	norminette $(SOURCES) $(SOURCES_BONUS) $(HEADERS)
 
 %.o: %.c
-	cc -c -o -Wall -Wextra -Werror -ansi -pedantic -o $@ $^
+	cc -c -o -Wall -Wextra -Werror -ansi -pedantic -o $@ $^ -DFT_SAFE=1
