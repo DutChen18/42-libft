@@ -7,7 +7,7 @@ void
 	void	*ptr;
 
 	ptr = malloc(count * size);
-	if (ptr != 0)
+	if (ptr)
 		ft_bzero(ptr, count * size);
 	return (ptr);
 }

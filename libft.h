@@ -31,18 +31,18 @@ int		ft_atoi(const char *str);
 
 /* memory */
 void	*ft_memset(void *ptr, int ch, size_t size);
+void	ft_bzero(void *ptr, size_t size);
 void	*ft_memcpy(void *dst, const void *src, size_t size);
 void	*ft_memmove(void *dst, const void *src, size_t size);
 void	*ft_memchr(const void *ptr, int ch, size_t size);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
-void	ft_bzero(void *ptr, size_t size);
 
 /* malloc */
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *str);
 
 /* strings 2 */
-char	*ft_substr(const char *str, unsigned int idx, size_t len);
+char	*ft_substr(const char *str, unsigned int idx, size_t max);
 char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strtrim(const char *str1, const char *str2);
 char	**ft_split(const char *str, char ch);

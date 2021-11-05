@@ -44,13 +44,14 @@ SOURCES_BONUS=\
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c
 OBJECTS=$(SOURCES:.c=.o)
+OBJECTS_BONUS=$(SOURCES_BONUS:.c=.o)
 NAME=libft.a
 
 $(NAME): $(OBJECTS)
 	ar rcs $@ $^
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
 	rm $(NAME)
@@ -60,7 +61,7 @@ re: clean all
 all: $(NAME)
 
 norm:
-	norminette $(SOURCES)
+	norminette $(SOURCES) $(SOURCES_BONUS)
 
 libftTester:
 	git clone https://github.com/Tripouille/libftTester.git
@@ -69,4 +70,4 @@ test: libftTester
 	(cd libftTester; make a)
 
 %.o: %.c
-	cc -c -Wall -Wextra -Werror -ansi -pedantic -o $@ $^
+	cc -c -o -Wall -Wextra -Werror -ansi -pedantic -o $@ $^
