@@ -49,23 +49,22 @@ OBJECTS=$(SOURCES:.c=.o)
 OBJECTS_BONUS=$(SOURCES_BONUS:.c=.o)
 NAME=libft.a
 
-$(NAME): $(OBJECTS)
-	ar rcs $@ $^
+$(NAME): $(HEADERS) $(OBJECTS) $(NAME)($(OBJECTS))
 
 $(NAME)(%.o): %.o
-	ar rcs $(NAME) $^
+	ar rcs $(NAME) $<
 
 clean:
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: clean all
 
 all: $(NAME)
 
-bonus: $(NAME) $(NAME)($(OBJECTS_BONUS))
+bonus: $(NAME) $(OBJECTS_BONUS) $(NAME)($(OBJECTS_BONUS))
 
 norm:
 	norminette $(SOURCES) $(SOURCES_BONUS) $(HEADERS)
