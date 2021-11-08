@@ -52,6 +52,9 @@ NAME=libft.a
 $(NAME): $(OBJECTS)
 	ar rcs $@ $^
 
+$(NAME)(%.o): %.o
+	ar rcs $(NAME) $^
+
 clean:
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
@@ -61,6 +64,8 @@ fclean: clean
 re: clean all
 
 all: $(NAME)
+
+bonus: $(NAME) $(NAME)($(OBJECTS_BONUS))
 
 norm:
 	norminette $(SOURCES) $(SOURCES_BONUS) $(HEADERS)
