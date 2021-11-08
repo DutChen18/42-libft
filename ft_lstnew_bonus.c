@@ -7,6 +7,8 @@ t_list
 	t_list	*lst;
 
 	lst = malloc(sizeof(*lst));
+	if (lst == NULL)
+		return (NULL);
 	lst->content = content;
 	lst->next = NULL;
 	return (lst);

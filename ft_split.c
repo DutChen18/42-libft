@@ -38,7 +38,7 @@ char
 	size_t	count1;
 	size_t	count2;
 
-	if (FT_SAFE && str == NULL)
+	if (FT_SAFE >= 1 && str == NULL)
 		return (NULL);
 	count1 = split(str, ch, NULL);
 	res = malloc(sizeof(*res) * (count1 + 1));

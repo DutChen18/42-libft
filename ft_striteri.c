@@ -5,7 +5,7 @@ void
 {
 	unsigned int	i;
 
-	if (FT_SAFE && str == NULL)
+	if (FT_SAFE >= 1 && str == NULL)
 		return ;
 	i = 0;
 	while (str[i])
