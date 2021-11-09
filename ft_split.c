@@ -4,30 +4,30 @@
 static size_t
 	split(const char *str, char ch, char **dst)
 {
-	size_t	index;
-	size_t	count;
-	size_t	start;
+	const char	*start;
+	size_t		count;
 
-	index = 0;
 	count = 0;
-	start = 0;
+	start = str;
 	while (1)
 	{
-		if (str[index] == ch || !str[index])
+		if (*str == ch || !*str)
 		{
-			if (index != start)
+			if (str != start)
 			{
 				if (dst != NULL)
-					dst[count] = ft_substr(str + start, 0, index - start);
-				if (dst != NULL && dst[count] == NULL)
-					return (count);
+				{
+					dst[count] = ft_substr(start, 0, str - start);
+					if (dst[count] == NULL)
+						return (count);
+				}
 				count += 1;
 			}
-			if (!str[index])
+			if (!*str)
 				return (count);
-			start = index + 1;
+			start = str + 1;
 		}
-		index += 1;
+		str += 1;
 	}
 }
 
