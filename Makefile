@@ -47,8 +47,7 @@ HEADERS=\
 	libft.h
 OBJECTS=$(SOURCES:.c=.o)
 OBJECTS_BONUS=$(SOURCES_BONUS:.c=.o)
-OFLAGS=-Ofast -march=native -flto
-CFLAGS=-DFT_SAFE=1 -ansi -pedantic
+CFLAGS=-Wall -Wextra -Werror -DFT_SAFE=1 -ansi -pedantic
 NAME=libft.a
 
 $(NAME): $(HEADERS) $(OBJECTS) $(NAME)($(OBJECTS))
@@ -62,7 +61,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: clean all
+re: fclean all
 
 all: $(NAME)
 
@@ -72,4 +71,4 @@ norm:
 	norminette $(SOURCES) $(SOURCES_BONUS) $(HEADERS)
 
 %.o: %.c
-	cc -c -o -Wall -Wextra -Werror $(CFLAGS) -o $@ $^
+	$(CC) -c $(CFLAGS) -o $@ $^
