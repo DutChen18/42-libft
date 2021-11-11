@@ -14,14 +14,14 @@ SRC_BONUS=\
 	ft_lstiter_bonus.c 		ft_lstlast_bonus.c		\
 	ft_lstmap_bonus.c 		ft_lstnew_bonus.c		\
 	ft_lstsize_bonus.c
-HEADERS=\
+INC=\
 	libft.h
 OBJ=$(SRC:.c=.o)
 OBJ_BONUS=$(SRC_BONUS:.c=.o)
 CFLAGS=-Wall -Wextra -Werror -DFT_SAFE=1 -ansi -pedantic
 NAME=libft.a
 
-$(NAME): $(HEADERS) $(OBJ) $(NAME)($(OBJ))
+$(NAME): $(INC) $(OBJ) $(NAME)($(OBJ))
 re: fclean all
 all: $(NAME)
 bonus: $(NAME) $(OBJ_BONUS) $(NAME)($(OBJ_BONUS))
@@ -35,11 +35,11 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $^
+%.o: %.c $(INC)
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 norm:
-	norminette $(SRC) $(SRC_BONUS) $(HEADERS)
+	norminette $(SRC) $(SRC_BONUS) $(INC)
 
 test: bonus
 	if [ ! -d ~/goinfre/test42 ]; then git clone https://github.com/DutChen18/test42 ~/goinfre/test42; fi
