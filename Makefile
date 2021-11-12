@@ -43,4 +43,4 @@ norm:
 
 test: bonus
 	if [ ! -d ~/goinfre/test42 ]; then git clone https://github.com/DutChen18/test42 ~/goinfre/test42; fi
-	python3 /tmp/test42/libft.py run $(shell pwd)
+	python3 ~/goinfre/test42/libft.py run $(shell pwd)
